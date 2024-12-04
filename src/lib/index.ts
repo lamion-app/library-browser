@@ -26,7 +26,7 @@ export const useBrowserLamion = (props: BrowserProps) => {
     },
   });
 
-  if (props.autoFlush) {
+  if (props.autoFlush ?? true) {
     setupAutoFlush(store, lamion.flush);
   }
 
