@@ -1,15 +1,18 @@
-import { useLamion, DeviceInfo } from "@lamion-libs/api";
+import { useLamion } from "@lamion-libs/api";
 import { getIdentifyKey } from "../func/identify";
 import { SessionDataStorage } from "../repository/store";
 import { getDeviceName, getDevicePlatform } from "../func/device";
+import { setupAutoFlush } from "../func/autoFlush";
 import { BrowserProps } from "../model";
 
 export const useBrowserLamion = (props: BrowserProps) => {
-  return useLamion({
+  const store = SessionDataStorage;
+
+  const lamion = useLamion({
     accessKey: props.accessKey,
     autoFlush: props.autoFlush ?? false,
     createStore: () => {
-      return SessionDataStorage;
+      return store;
     },
     meta: {
       clientId: props.clientId,
@@ -22,4 +25,8 @@ export const useBrowserLamion = (props: BrowserProps) => {
       }),
     },
   });
+
+  setupAutoFlush(store, lamion.flush);
+
+  return lamion;
 };

@@ -1,9 +1,10 @@
 {
   "name": "@lamion-libs/browser",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "ImpossibleAccuracy",
   "scripts": {
-    "build": "browserify ./src/index.ts -p [ tsify --noImplicitAny ] --standalone Lamion | uglifyjs -c -o ./dist/bundle.js"
+    "build": "tsc",
+    "build-bundle": "browserify ./src/bundle.ts -p [ tsify --noImplicitAny ] --standalone Lamion | uglifyjs -c -o ./dist/bundle.js"
   },
   "main": "dist/index.js",
   "files": [
@@ -20,6 +21,6 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@lamion-libs/api": "^0.0.8"
+    "@lamion-libs/api": "^0.0.10-dev3"
   }
 }
