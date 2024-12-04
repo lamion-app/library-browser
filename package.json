@@ -1,5 +1,5 @@
 {
-  "name": "@lamion-libs/browser",
+  "name": "@lamion-libs/impl",
   "version": "0.1.0",
   "author": "ImpossibleAccuracy",
   "scripts": {
