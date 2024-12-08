@@ -1,6 +1,6 @@
 {
   "name": "@lamion-libs/impl",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "ImpossibleAccuracy",
   "scripts": {
     "build": "tsc",
@@ -21,6 +21,6 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@lamion-libs/api": "^0.0.10-dev3"
+    "@lamion-libs/api": "^0.1.2"
   }
 }
